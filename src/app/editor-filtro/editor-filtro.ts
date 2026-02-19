@@ -10,15 +10,21 @@ export class EditorFiltroComponent {
   brillo= signal(100);
   contraste = signal(100);
   blur = signal(0);
+  grayscale = signal(0);
 
   filtroScss = computed(()=>{
-    return `brightness(${this.brillo()}%) contrast(${this.contraste()}%) blur(${this.blur()}px)`;
-  })
+  return `brightness(${this.brillo()}%) contrast(${this.contraste()}%) blur(${this.blur()}px) grayscale(${this.grayscale()}%)`;
+})
 
   actualizar (prop: string, evento: Event){
     const valor = (evento.target as HTMLInputElement).value;
     if (prop === 'brillo') this.brillo.set(+valor);
     if (prop === 'contraste') this.contraste.set(+valor);
     if (prop === 'blur') this.blur.set(+valor);
+    
   }
+  aplicarBlancoNegro() {
+  this.grayscale.set(100);
+}
+
 }

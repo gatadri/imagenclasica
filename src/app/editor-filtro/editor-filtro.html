@@ -1,6 +1,6 @@
 <div class="card-grafica">
   <div class="canvas-preview">
-    <img [style.filter]="filtroScss()" src="https://es.vecteezy.com/fotos-gratis/wallpapers" alt="Imagen Proceso">
+    <img [style.filter]="filtroScss()" src="https://picsum.photos/id/237/800/600" alt="Imagen Proceso">
     <div class="controles">
       <label> Brillo : {{brillo()}}</label>
       <input type="range" min="0" max="200" (input)="actualizar('brillo', $event)">
@@ -8,6 +8,9 @@
       <input type="range" min="0" max="200" (input)="actualizar('contraste', $event)">
       <label> Pixel : {{blur()}}</label>
       <input type="range" min="0" max="20" (input)="actualizar('blur', $event)">
+      <button (click)="aplicarBlancoNegro()">Aplicar filtro</button>
+
+
     </div>
   </div>
 </div>
