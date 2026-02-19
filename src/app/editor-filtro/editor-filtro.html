@@ -1,8 +1,13 @@
 <div class="card-grafica">
-    <div class="canvas-preview">
-        <img [style.filter]="filtroScss()" src="https://educacionplasticayvisual.com/lenguajes-visuales/la-imagen/" alt="imagen flor">
-        <div class="controles">
-            <label>Brillo: {{brillo()}}</label>
-            <imput type="range" min="0" max="200" [value]="brillo()" (input)="brillo.set($any($event.target).value)">
-
-        </div>
+  <div class="canvas-preview">
+    <img [style.filter]="filtroScss()" src="https://es.vecteezy.com/fotos-gratis/wallpapers" alt="Imagen Proceso">
+    <div class="controles">
+      <label> Brillo : {{brillo()}}</label>
+      <input type="range" min="0" max="200" (input)="actualizar('brillo', $event)">
+      <label> Contraste : {{contraste()}}</label>
+      <input type="range" min="0" max="200" (input)="actualizar('contraste', $event)">
+      <label> Pixel : {{blur()}}</label>
+      <input type="range" min="0" max="20" (input)="actualizar('blur', $event)">
+    </div>
+  </div>
+</div>
