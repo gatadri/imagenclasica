@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { EditorFiltroComponent } from './editor-filtro';
 
 @Component({
   selector: 'app-root',

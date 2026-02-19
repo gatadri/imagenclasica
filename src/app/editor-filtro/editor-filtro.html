@@ -1,0 +1,8 @@
+<div class="card-grafica">
+    <div class="canvas-preview">
+        <img [style.filter]="filtroScss()" src="https://educacionplasticayvisual.com/lenguajes-visuales/la-imagen/" alt="imagen flor">
+        <div class="controles">
+            <label>Brillo: {{brillo()}}</label>
+            <imput type="range" min="0" max="200" [value]="brillo()" (input)="brillo.set($any($event.target).value)">
+
+        </div>
