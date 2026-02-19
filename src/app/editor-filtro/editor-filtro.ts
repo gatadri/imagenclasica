@@ -16,15 +16,19 @@ export class EditorFiltroComponent {
   return `brightness(${this.brillo()}%) contrast(${this.contraste()}%) blur(${this.blur()}px) grayscale(${this.grayscale()}%)`;
 })
 
-  actualizar (prop: string, evento: Event){
-    const valor = (evento.target as HTMLInputElement).value;
-    if (prop === 'brillo') this.brillo.set(+valor);
-    if (prop === 'contraste') this.contraste.set(+valor);
-    if (prop === 'blur') this.blur.set(+valor);
-    
-  }
+  
   aplicarBlancoNegro() {
   this.grayscale.set(100);
+  this.blur.set(1);
+  this.brillo.set(80);
+  this.contraste.set(84);
+}
+
+quitarBlancoNegro() {
+  this.grayscale.set(0);
+  this.blur.set(0);
+  this.brillo.set(100);
+  this.contraste.set(100);
 }
 
 }
